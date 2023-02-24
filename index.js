@@ -85,7 +85,25 @@ const personA = new Person({
 */
 
 class Car {
-  constructor()
+  constructor(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+  }
+  fill(gallons) {
+    this.tank = this.tank + gallons;
+  }
+  drive(distance) {
+    const milesPerGallon = distance / this.tank;
+    this.odometer = this.odometer + distance
+    if(this.tank > 0) {
+      return this.tank = this.tank - milesPerGallon
+    }
+    else if(this.tank = 0) {
+      return `I ran out of fuel at ${odometer} miles!`
+    }
+  }
 }
 
 /*
@@ -102,7 +120,14 @@ class Car {
 */
 
 class Lambdasian {
-  
+  constructor(attribute) {
+    this.name = attribute.name;
+    this.age = attribute.age;
+    this.location = attribute.location;
+  }
+  speak() {
+    return `Hello my name is ${this.name}, I am from ${this.location}`
+  }
 }
 
 /*
